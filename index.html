@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Dietrich-Kolokouris | Author</title>
+    
+    <!-- 1. Design System (Tailwind CSS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Typography (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 3. Icons (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Font Assignments */
+        h1, h2, h3, h4, .font-serif { font-family: 'Playfair Display', serif; }
+        body, p, a, .font-sans { font-family: 'Lato', sans-serif; }
+        
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Book Cover Hover Effect */
+        .book-cover { 
+            transition: transform 0.4s ease, box-shadow 0.4s ease; 
+        }
+        .book-cover:hover { 
+            transform: translateY(-5px) rotate(0deg); 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Modal Animation */
+        .modal-enter { animation: fadeIn 0.3s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-800 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 py-4 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="font-serif text-xl font-bold tracking-wide text-stone-900 border-2 border-stone-900 px-2 py-1">SDK</a>
+            <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-bold text-gray-500">
+                <a href="#books" class="hover:text-orange-700 transition-colors">Books</a>
+                <a href="#about" class="hover:text-orange-700 transition-colors">About</a>
+                <a href="#contact" class="hover:text-orange-700 transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Icon (Visual only) -->
+            <button class="md:hidden text-stone-900"><i class="fa-solid fa-bars text-xl"></i></button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="bg-white py-24 lg:py-32 border-b border-stone-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <!-- Subtle texture overlay -->
+            <div style="background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png'); width:100%; height:100%;"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <p class="text-orange-700 font-bold tracking-[0.2em] text-xs uppercase mb-6">Historian & Author</p>
+            <h1 class="font-serif text-5xl lg:text-7xl font-bold text-stone-900 mb-8 leading-tight">
+                Stephen Dietrich-Kolokouris
+            </h1>
+            <p class="text-xl lg:text-2xl text-stone-500 font-light max-w-2xl mx-auto leading-relaxed font-serif italic">
+                Uncovering the hidden truths of history, the paranormal, and the human condition.
+            </p>
+        </div>
+    </header>
+
+    <!-- LATEST RELEASE SECTION -->
+    <section id="books" class="py-20 max-w-6xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="font-serif text-3xl font-bold text-stone-900 mb-3">Featured Release</h2>
+            <div class="h-0.5 w-16 bg-orange-600 mx-auto"></div>
+        </div>
+
+        <!-- BOOK 1: The American Paranormal -->
+        <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center mb-32 border-b border-stone-200 pb-20">
+            <!-- Cover -->
+            <div class="w-full md:w-1/3 flex justify-center relative">
+                <div class="absolute -inset-4 bg-orange-100 rounded-full blur-3xl opacity-50 z-0"></div>
+                <!-- 
+                     FILE: 'american-paranormal-cover.jpg'
+                -->
+                <img src="american-paranormal-cover.jpg" 
+                     onerror="this.onerror=null; this.src='https://images-na.ssl-images-amazon.com/images/P/B0DNK3XQ36.01._SL1000_.jpg';"
+                     alt="The American Paranormal Book Cover" 
+                     class="book-cover relative z-10 w-48 md:w-64 lg:w-72 shadow-2xl rounded-sm rotate-2 bg-stone-200">
+            </div>
+            
+            <div class="w-full md:w-2/3">
+                <div class="flex items-center gap-3 mb-4">
+                     <span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">New Release</span>
+                     <span class="text-stone-400 text-xs font-bold uppercase tracking-wider">Non-Fiction</span>
+                </div>
+                
+                <h3 class="font-serif text-4xl lg:text-5xl font-bold text-stone-900 mb-6 leading-tight">
+                    The American Paranormal
+                </h3>
+                <h4 class="font-serif text-xl text-stone-500 mb-6 italic">
+                    Technology, Spiritualism, and the Search for Proof of Life After Death
+                </h4>
+                
+                <p class="text-gray-600 leading-relaxed mb-6 text-lg">
+                    Dr. Stephen Dietrich-Kolokouris traces 150 years of America's obsession with proving life after death—from 19th-century séances to 21st-century artificial intelligence. Blending historical research with modern consciousness science, this book explores how technology has repeatedly redefined what humanity believes about the soul.
+                </p>
+                <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                    It is a chronicle of faith meeting physics, of data chasing divinity, and of how our machines may finally answer the oldest human question: does consciousness survive death?
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="openModal('The American Paranormal', 'https://www.amazon.com/dp/B0DNK3XQ36', 'https://www.barnesandnoble.com/w/the-american-paranormal-stephen-dietrich-kolokouris/1148641940', '')" 
+                       class="bg-stone-900 text-white px-8 py-4 rounded-full font-bold tracking-wider hover:bg-orange-700 transition-all shadow-lg hover:shadow-xl flex items-center gap-3">
+                        <span>Get Your Copy</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OTHER BOOKS GRID -->
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-3xl font-bold text-stone-900 mb-3">Previous Works</h2>
+            <div class="h-0.5 w-16 bg-stone-300 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-12 lg:gap-16">
+            
+            <!-- BOOK 2: Delayed Blitz (NEW) -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                <!-- FILE: 'delayed-blitz-cover.jpg' -->
+                <img src="delayed-blitz-cover.jpg" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/400x600/e5e5e5/333333?text=Delayed+Blitz';"
+                     alt="Delayed Blitz Book Cover" 
+                     class="book-cover w-40 shadow-xl mb-6 -mt-12 rounded-sm">
+                
+                <h3 class="font-serif text-2xl font-bold text-stone-900 mb-2">Delayed Blitz</h3>
+                <p class="text-sm text-stone-500 uppercase tracking-widest font-bold mb-4">Counterfactual History</p>
+                <p class="text-gray-600 mb-6 line-clamp-4">
+                    What if Nazi Germany had delayed its aggression? In this gripping counterfactual history, Dr. Dietrich-Kolokouris reimagines World War II with Nazi invasions postponed. Through rigorous research, this book explores how a fortified Atlantic Wall and advanced Wunderwaffe could have altered history's course.
+                </p>
+                <button onclick="openModal('Delayed Blitz', 'https://www.amazon.com/s?k=Stephen+Dietrich-Kolokouris+Delayed+Blitz', '', '')" 
+                   class="mt-auto border-2 border-stone-200 text-stone-800 px-6 py-2 rounded-full font-bold text-sm hover:border-stone-900 hover:bg-stone-900 hover:text-white transition-all">
+                    Purchase Options
+                </button>
+            </div>
+
+            <!-- BOOK 3: Behind the Mask -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                <!-- FILE: 'behind-mask-cover.jpg' -->
+                <img src="behind-mask-cover.jpg" 
+                     onerror="this.onerror=null; this.src='https://images-na.ssl-images-amazon.com/images/P/B0DT1BMD87.01._SL1000_.jpg';"
+                     alt="Behind the Mask Book Cover" 
+                     class="book-cover w-40 shadow-xl mb-6 -mt-12 rounded-sm">
+                
+                <h3 class="font-serif text-2xl font-bold text-stone-900 mb-2">Behind the Mask</h3>
+                <p class="text-sm text-stone-500 uppercase tracking-widest font-bold mb-4">Historical Biography</p>
+                <p class="text-gray-600 mb-6 line-clamp-4">
+                    "Hitler the Socialite" uncovers a little-known side of Adolf Hitler—his strategic manipulation of high society and the wealthy women who funded his rise to power. An eye-opening exploration of the uncharted territory of his clandestine existence.
+                </p>
+                <button onclick="openModal('Behind the Mask', 'https://www.amazon.com/dp/B0DT1BMD87', '', '')" 
+                   class="mt-auto border-2 border-stone-200 text-stone-800 px-6 py-2 rounded-full font-bold text-sm hover:border-stone-900 hover:bg-stone-900 hover:text-white transition-all">
+                    Purchase Options
+                </button>
+            </div>
+
+            <!-- BOOK 4: Cross & Swastika -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                <!-- FILE: 'cross-swastika-cover.jpg' -->
+                <img src="cross-swastika-cover.jpg" 
+                     onerror="this.onerror=null; this.src='https://images-na.ssl-images-amazon.com/images/P/B0FCRYXSST.01._SL1000_.jpg';"
+                     alt="Cross & Swastika Book Cover" 
+                     class="book-cover w-40 shadow-xl mb-6 -mt-12 rounded-sm">
+                
+                <h3 class="font-serif text-2xl font-bold text-stone-900 mb-2">Cross & Swastika</h3>
+                <p class="text-sm text-stone-500 uppercase tracking-widest font-bold mb-4">Orthodox Europe and the Waffen-SS</p>
+                <p class="text-gray-600 mb-6 line-clamp-4">
+                    A deeply personal and historical project examining the complex and often buried history of Orthodox Christians caught in the machinery of WWII.
+                </p>
+                <button onclick="openModal('Cross & Swastika', 'https://www.amazon.com/dp/B0FCRYXSST', '', '')" 
+                   class="mt-auto border-2 border-stone-200 text-stone-800 px-6 py-2 rounded-full font-bold text-sm hover:border-stone-900 hover:bg-stone-900 hover:text-white transition-all">
+                    Purchase Options
+                </button>
+            </div>
+
+            <!-- BOOK 5: Chicago Ripper Crew -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                <!-- Expects file: 'chicago-ripper-cover.jpg' (Matches pattern) -->
+                <img src="chicago-ripper-cover.jpg" 
+                     onerror="this.onerror=null; this.src='https://images-na.ssl-images-amazon.com/images/P/B0FDPZ8R9T.01._SL1000_.jpg';"
+                     alt="Chicago Ripper Crew Book Cover" 
+                     class="book-cover w-40 shadow-xl mb-6 -mt-12 rounded-sm">
+                
+                <h3 class="font-serif text-2xl font-bold text-stone-900 mb-2">Chicago Ripper Crew: Reboot</h3>
+                <p class="text-sm text-stone-500 uppercase tracking-widest font-bold mb-4">True Crime History</p>
+                <p class="text-gray-600 mb-6 line-clamp-4">
+                    A chilling deep dive into one of the most gruesome true crime stories in American history. In the early 1980s, a satanic cult of serial killers terrorized Chicago. This expanded reboot goes beyond the headlines.
+                </p>
+                <button onclick="openModal('Chicago Ripper Crew: Reboot', 'https://www.amazon.com/dp/B0FDPZ8R9T', '', '')" 
+                   class="mt-auto border-2 border-stone-200 text-stone-800 px-6 py-2 rounded-full font-bold text-sm hover:border-stone-900 hover:bg-stone-900 hover:text-white transition-all">
+                    Purchase Options
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="bg-stone-900 text-stone-300 py-24 px-6">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            
+            <div class="w-full md:w-1/3 text-center">
+                <div class="relative w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-stone-700 shadow-2xl">
+                    <!-- 
+                         FILE: 'author-photo.jpg'
+                    -->
+                    <img src="author-photo.jpg" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                         alt="Stephen Dietrich-Kolokouris" 
+                         class="w-full h-full object-cover">
+                    
+                    <!-- Fallback if Author Pic is missing -->
+                    <div class="hidden absolute inset-0 bg-stone-800 items-center justify-center">
+                        <span class="font-serif text-4xl text-stone-500">SDK</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-2/3">
+                <h2 class="font-serif text-3xl font-bold text-white mb-6">About the Author</h2>
+                <p class="text-lg leading-relaxed mb-6 font-serif italic text-stone-400">
+                    "I write because the past has a way of shaping the present, whether we choose to acknowledge it or not."
+                </p>
+                <p class="leading-relaxed mb-4 text-stone-400">
+                    Dr. Stephen Dietrich-Kolokouris is a historian, researcher, and near-death experience survivor whose work bridges the gap between academic rigor and personal testimony. He holds a PhD in History and brings a unique perspective as a former law enforcement officer.
+                </p>
+                <p class="leading-relaxed text-stone-400">
+                    His journey into near-death research became profoundly personal when he died in the back of an ambulance—and was given another chance. Today, his work asks what materialist science cannot adequately answer, approaching the paranormal with investigative skepticism and scholarly discipline.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section id="contact" class="bg-stone-950 text-stone-500 py-12 text-center border-t border-stone-900">
+        <div class="max-w-2xl mx-auto px-6">
+            <h3 class="font-serif text-white text-xl mb-6">Stay Connected</h3>
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="#" class="hover:text-orange-500 transition-colors"><i class="fa-brands fa-amazon text-2xl"></i></a>
+                <a href="#" class="hover:text-orange-500 transition-colors"><i class="fa-brands fa-goodreads text-2xl"></i></a>
+                <a href="#" class="hover:text-orange-500 transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
+            </div>
+            <p class="text-sm">&copy; 2025 Stephen Dietrich-Kolokouris. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- THE SMART MODAL -->
+    <div id="buyModal" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-stone-900 bg-opacity-80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+
+        <!-- Modal Panel -->
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-md modal-enter">
+                    
+                    <!-- Header -->
+                    <div class="bg-stone-50 px-4 py-5 sm:p-6 text-center border-b border-stone-100">
+                        <h3 class="text-lg font-serif font-bold leading-6 text-gray-900" id="modal-book-title">Select Your Store</h3>
+                        <p class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Secure Checkout via External Sites</p>
+                    </div>
+
+                    <!-- Store Buttons -->
+                    <div class="bg-white px-4 py-6 sm:px-8 flex flex-col gap-3">
+                        
+                        <!-- Amazon -->
+                        <a id="btn-amazon" href="#" target="_blank" class="flex items-center justify-between w-full bg-white border-2 border-stone-100 hover:border-orange-500 hover:bg-orange-50 p-4 rounded-xl group transition-all">
+                            <div class="flex items-center">
+                                <i class="fa-brands fa-amazon text-2xl mr-4 text-stone-800"></i>
+                                <div class="text-left">
+                                    <span class="block font-bold text-gray-900 text-sm">Amazon</span>
+                                    <span class="block text-xs text-gray-500">Paperback & Kindle</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-external-link-alt text-stone-300 group-hover:text-orange-500"></i>
+                        </a>
+
+                        <!-- Barnes & Noble -->
+                        <a id="btn-bn" href="#" target="_blank" class="flex items-center justify-between w-full bg-white border-2 border-stone-100 hover:border-green-700 hover:bg-green-50 p-4 rounded-xl group transition-all">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-book text-2xl mr-4 text-stone-800"></i>
+                                <div class="text-left">
+                                    <span class="block font-bold text-gray-900 text-sm">Barnes & Noble</span>
+                                    <span class="block text-xs text-gray-500">Hardcover & Nook</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-external-link-alt text-stone-300 group-hover:text-green-700"></i>
+                        </a>
+
+                    </div>
+                    
+                    <!-- Cancel -->
+                    <div class="bg-stone-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="button" class="mt-3 inline-flex w-full justify-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto" onclick="closeModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const modal = document.getElementById('buyModal');
+        const titleEl = document.getElementById('modal-book-title');
+        const btnAmazon = document.getElementById('btn-amazon');
+        const btnBn = document.getElementById('btn-bn');
+
+        function openModal(bookTitle, amazonUrl, bnUrl, appleUrl) {
+            // 1. Set Title
+            titleEl.innerText = "Buy: " + bookTitle;
+            
+            // 2. Set Links
+            setupLink(btnAmazon, amazonUrl);
+            setupLink(btnBn, bnUrl);
+            
+            // 3. Show Modal
+            modal.classList.remove('hidden');
+        }
+
+        function setupLink(element, url) {
+            if (url && url !== '') {
+                element.href = url;
+                element.style.display = 'flex';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") closeModal();
+        });
+    </script>
+</body>
+</html>
